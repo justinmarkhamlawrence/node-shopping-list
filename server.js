@@ -40,8 +40,8 @@ var storage = new Storage();
 storage.add('Broad beans');
 storage.add('Tomatoes');
 storage.add('Peppers');
-storage.put(1, 'Hotdog');
-console.log(storage.items);
+//storage.put(1, 'Hotdog');
+//console.log(storage.items);
 
 var app = express();
 app.use(express.static('public'));
@@ -84,3 +84,5 @@ app.put('/items/:id', jsonParser, function(request, response) {
      }
 });
 app.listen(process.env.PORT, process.env.IP);
+exports.app = app;
+exports.storage = storage;
